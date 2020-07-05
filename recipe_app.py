@@ -57,12 +57,9 @@ def add_recipes():
         
     recipes.close()
     
-  
-# Use the application default credentials
-cred = credentials.ApplicationDefault()
-firebase_admin.initialize_app(cred, {
-  'projectId': "recipes-f93b2",
-})
+cred = credentials.Certificate("D:\Git_Repositories\RecipeApp\super_secret_key.json")
+firebase_admin.initialize_app(cred)
+
 
 db = firestore.client()
 
