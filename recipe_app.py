@@ -67,9 +67,12 @@ def add_recipes():
         }
         
         db.collection(u'recipes').document(name).set(new_recipe)
-    
-    
-    
+
+
+
+
+
+
 
 
 def driver():
@@ -84,9 +87,6 @@ def driver():
             break
         else:
             print("invalid input")
-        
-            
-    
 
 
 cred = credentials.Certificate("D:\Secret_keys\super_secret_key.json")
