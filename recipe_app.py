@@ -70,7 +70,12 @@ def add_recipes():
 
 
 
-
+def list_recipes():
+    recipes = db.collection(u'recipes').stream()
+    for recipe in recipes:
+        print(recipe.to_dict()['name'])
+    
+    
 
 
 
@@ -80,9 +85,12 @@ def driver():
         ans = input(
             '''Select function:
             \n1) Add Recipes
+            \n2) List Recipes
             \n0) Quit\n''')
         if ans == "1":
             add_recipes()
+        elif ans == "2":
+            list_recipes()
         elif ans == "0":
             break
         else:
